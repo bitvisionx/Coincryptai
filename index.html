@@ -1,42 +1,32 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CrypVisionX</title>
-  <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="style.css" />
-  <meta name="theme-color" content="#000000" />
 </head>
 <body>
   <div class="container">
-    <img src="smiley.png" alt="CrypVisionX Logo" class="logo" />
+    <div class="logo">
+      <div class="mouth"></div>
+    </div>
     <h1>CrypVisionX</h1>
 
     <label for="cryptoSelect">Kies een crypto:</label>
     <select id="cryptoSelect"></select>
 
-    <div class="fav-container">
-      <button onclick="toggleFavorite()">⭐ Voeg toe aan favorieten</button>
+    <div class="time-buttons">
+      <button data-hours="1">1 uur</button>
+      <button data-hours="6" class="active">6 uur</button>
+      <button data-hours="24">24 uur</button>
     </div>
 
-    <p id="price">Huidige prijs: laden...</p>
+    <button id="favToggle">Favoriet toevoegen/verwijderen</button>
 
-    <div id="predictions">
-      <p id="prediction1h">1 uur: ...</p>
-      <p id="prediction6h">6 uur: ...</p>
-      <p id="prediction24h">24 uur: ...</p>
-    </div>
+    <p id="result">Wacht op een voorspelling...</p>
   </div>
 
   <script src="script.js"></script>
-  <script>
-    // Service worker registreren
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js').then(() => {
-        console.log("✅ Service worker geregistreerd");
-      });
-    }
-  </script>
 </body>
 </html>
