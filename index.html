@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CrypVisionX AI</title>
+  <title>CrypVisionX</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="style.css" />
+  <meta name="theme-color" content="#000000" />
 </head>
 <body>
   <div class="container">
@@ -19,14 +20,23 @@
       <button onclick="toggleFavorite()">⭐ Voeg toe aan favorieten</button>
     </div>
 
+    <p id="price">Huidige prijs: laden...</p>
+
     <div id="predictions">
-      <p id="price">Huidige prijs: …</p>
-      <p id="prediction1h">1 uur: …</p>
-      <p id="prediction6h">6 uur: …</p>
-      <p id="prediction24h">24 uur: …</p>
+      <p id="prediction1h">1 uur: ...</p>
+      <p id="prediction6h">6 uur: ...</p>
+      <p id="prediction24h">24 uur: ...</p>
     </div>
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // Service worker registreren
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js').then(() => {
+        console.log("✅ Service worker geregistreerd");
+      });
+    }
+  </script>
 </body>
 </html>
