@@ -3,56 +3,29 @@ body {
   color: yellow;
   font-family: Arial, sans-serif;
   text-align: center;
-  font-size: 24px;
-  padding: 20px;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
   max-width: 400px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .logo {
-  position: relative;
   width: 100px;
   height: 100px;
-  background: yellow;
-  border-radius: 50%;
-  margin: 20px auto 40px auto;
-  box-shadow: 0 0 10px #ffea00;
+  margin: 20px auto;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" stroke="yellow" stroke-width="4" fill="black"/><circle cx="35" cy="40" r="5" fill="yellow"/><circle cx="65" cy="40" r="5" fill="yellow"/><path d="M35 70 Q50 55, 65 70" stroke="yellow" stroke-width="4" fill="none"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.logo::before, .logo::after {
-  content: "";
-  position: absolute;
-  top: 30px;
-  width: 15px;
-  height: 15px;
-  background: black;
-  border-radius: 50%;
-}
-
-.logo::before {
-  left: 25px;
-}
-
-.logo::after {
-  right: 25px;
-}
-
-.logo .mouth {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  width: 50px;
-  height: 25px;
-  border-bottom: 5px solid black;
-  border-radius: 0 0 50px 50px;
-  transform: translateX(-50%);
-}
-
-select, button {
-  font-size: 24px;
+select, input[type="checkbox"], button {
+  font-size: 18px;
   margin: 10px 0;
   padding: 10px;
   width: 100%;
@@ -64,29 +37,19 @@ button {
   color: black;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-weight: bold;
 }
 
 button:hover {
   background-color: #ffea00;
 }
 
-.time-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin: 15px 0;
+.predictions p {
+  font-size: 18px;
+  margin: 8px 0;
 }
 
-.time-buttons button {
-  flex: 1;
-  margin: 0 5px;
-}
-
-.time-buttons button.active {
-  background-color: #ffea00;
-  font-weight: bold;
-}
-
-#favToggle {
-  margin-top: 10px;
+.favorites {
+  margin: 10px 0;
+  font-size: 16px;
 }
